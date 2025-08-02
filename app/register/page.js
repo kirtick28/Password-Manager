@@ -21,16 +21,17 @@ export default function RegisterPage() {
       });
 
       const data = await res.json();
-
+      console.log(data);
       if (res.status === 201) {
         localStorage.setItem('token', data.token);
-        localStorage.setItem('id', data.user.user._id);
+        localStorage.setItem('id', data.user.user.id);
         localStorage.setItem('name', data.user.name);
         router.push('/');
       } else {
         alert(data.message);
       }
     } catch (err) {
+      console.log(err);
       alert('Something went wrong. Try again later.');
     }
   };
