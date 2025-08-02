@@ -24,7 +24,7 @@ export default function RegisterPage() {
       console.log(data);
       if (res.status === 201) {
         localStorage.setItem('token', data.token);
-        localStorage.setItem('id', data.user.user.id);
+        localStorage.setItem('id', data.user.id);
         localStorage.setItem('name', data.user.name);
         router.push('/');
       } else {
